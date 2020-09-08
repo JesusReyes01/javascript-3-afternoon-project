@@ -22,9 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
-
-
+let {color, make, model, year} = carDetails
 ////////// PROBLEM 2 //////////
 
 /*
@@ -33,15 +31,14 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
+
 function greeting( obj ) {
-  //Code Here
-  
+//   //Code Here
+  let {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -54,7 +51,11 @@ function greeting( obj ) {
 */
 
 //Code Here
+function totalPopulation( obj )  {
+  let {utah, california, texas, arizona} = obj
 
+  return utah + california + texas + arizona
+} 
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +69,16 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(obj) {
+  
+  let{carb, fat, protein} = obj
+  let newArr = []
+  newArr.push(carb)
+  newArr.push(fat)
+  newArr.push(protein)
+  return newArr
 
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +96,13 @@ function greeting( obj ) {
 */
 
 //Code Here
+function largeNumbers (obj){
+  let{first, second, third} = obj
+  let newArr = [first,second,third]
 
+  
+  return Math.min(...newArr)
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +114,74 @@ function greeting( obj ) {
 */
 
 //Code Here
+function numberGroups (obj){
+  let{a, b, c} = obj
+  let newArr = [a,b,c]
+  let longest = 0;
+  let longestArr = [];
+
+  newArr.forEach(el => {
+    if (el.length > longest){
+      longestArr = el
+      longest = el.length
+    }
+  })
+  return longestArr
+
+  
+}
+
+
+
+// function numberGroups (obj){
+//   let{a, b, c} = obj
+//   let newArr = [a,b,c]
+//   let longArr = []
+//   for (let i = 0; i < newArr.length;i++){
+//     for(let j = i+1; j <newArr.length; j++){
+//       if(newArr[i] > newArr[j]){
+//         longArr.push(i)
+//       }
+//       else{
+//         longArr.push(j)
+//       }
+//     }
+//     return longArr[longArr[longArr.length-1]]
+
+//   }
+//}
+
+    
+  // newArr.forEach(el =>{
+  //   longArr = newArr.length[i] > newArr.length[i+1] ? newArr[i] : newArr[i+1]
+  // })
+
+
+  // let longestArr = newArr.foreach((el){
+      
+  //   el.length[i] > el.length[i+1] ? newArr.push(el[i]) : newArr.push(el[i+1])
+  //   })
+  // return newArr[newArr.length-1]
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   newArr.Max(x => x.Length);
+  
+    
+  
+//   return mapArr;
+// }
 
 

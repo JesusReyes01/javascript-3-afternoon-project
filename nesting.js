@@ -51,7 +51,29 @@ var employees = [
 */
 
 //Code Here
+function employeeUpdater(){
+  employees.map(function(el, index, arr){
+    if(el.firstName === "Theo"){
+      arr.splice(index,1)}
+    else if(el.firstName === "Lorie"){
+      el.department = "HR"}
+  
+  })
+  return employees
+}
 
+// works but does not use map 
+// function employeeUpdater(){ 
+//   employees.forEach(function (el, index,arr){
+//     if (el.firstName === "Theo"){
+//       arr.splice(index,1);
+//     }
+//     else if (el.firstName === "Lorie"){
+//       el.department = "HR"
+//     }
+//     return employees
+// })
+// }
 
 
 ////////// PROBLEM 2 //////////
@@ -67,10 +89,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-
-//Code Here
-
-
+function removeDuplicates(){
+  let workplaceAccidents2 = workplaceAccidents.filter((element, index) => workplaceAccidents.indexOf(element) === index);
+  return workplaceAccidents2
+  }
 
 ////////// PROBLEM 3 //////////
 
@@ -97,8 +119,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -139,6 +161,13 @@ var myCar = {
 */
 
 //Code Here
+function recordCleaner(){
+  myCar.accidents.forEach(function(el,index,arr){
+    if (el.atFaultForAccident === true){
+      return el.accidents.atFaultForAccident === false
+    }
+  })
+}
 
 
 
@@ -158,5 +187,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
-
+function looper(){
+  numsArr.forEach(function(el, index, arr){
+    numsArr[index].forEach(function(el2,index2,arr2){
+      // console.log(arr2)
+      // console.log(numsArr[index])
+      // console.log(index)
+      if (el2 % 2 === 0){
+        numsArr[index].splice(index2, 1, "even")
+      }
+      else { 
+        numsArr[index].splice(index2, 1, "odd")
+      }
+    })
+    return numsArr
+  })
+  return numsArr
+}
