@@ -164,7 +164,7 @@ var myCar = {
 function recordCleaner(){
   myCar.accidents.forEach(function(el,index,arr){
     if (el.atFaultForAccident === true){
-      return el.accidents.atFaultForAccident === false
+      return el.atFaultForAccident = false;
     }
   })
 }
